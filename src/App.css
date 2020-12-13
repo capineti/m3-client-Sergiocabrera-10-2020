@@ -1,26 +1,36 @@
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
 }
 
 .App {
-  padding: 20px;;
+  padding: 20px;
 }
 
-nav.navbar { 
+nav.navbar {
   display: flex;
-  padding: 0px 20px;
-  background: #686de0; 
+  min-height: 5vh;
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+  background: #ec3cc6;
 }
 
 button.navbar-button {
-  padding: 5px 20px;
-  width: 100px;
-  margin: 15px 10px;
+  margin: 15px 30px;
   border-radius: 3px;
 }
 
 #home-btn {
   color: white;
   text-decoration: none;
+}
+
+.Header {
+  background: #ec3cc6;
+  display: flex;
+  position: absolute;
+  top: 0%;
+  width: 100%;
 }
