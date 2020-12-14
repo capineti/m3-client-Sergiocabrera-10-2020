@@ -27,8 +27,11 @@ class ListOfBoards extends Component {
           console.log("hoverboardsObj", hoverboardsObj);
           return (
             <div key={hoverboardsObj._id}>
-              <img src="" alt="" />
+              
               <p>{hoverboardsObj.state}</p>
+              <p>{hoverboardsObj.battery}</p>
+              
+
               <Link to={`/hoverboards/details/${hoverboardsObj._id}`}>
                 <p>{hoverboardsObj.name}</p>
               </Link>

@@ -6,7 +6,7 @@ import axios from "axios";
 
 class AddHoverboard extends Component {
   //state = { model: undefined, name: undefined };
-  state = { model: "The Marty", name: "" };
+  state = { model: "The Marty", name: "",battery:"100%",location:[242626,273673]};
 
   handleChange = (event) => {
     const { name, value } = event.target;
@@ -15,21 +15,22 @@ class AddHoverboard extends Component {
 
   handleHoverboards = (even) => {
     even.preventDefault();
-    const { name, model } = this.state;
+    const {model, name,location,battery } = this.state;
     axios.post(
       "http://localhost:5000/api/hoverboards",
-      { name, model },
+      { model, name,location,battery},
       { withCredentials: true }
     )
+   
     .then( (response) => {
       console.log('after post', response.data);
-
+      
     } )
-  
+    this.setState({name:""})
   };
 
   render() {
-    const { model, name, state } = this.state;
+   
 
     return (
       <form onSubmit={this.handleFormSubmit}>
@@ -43,6 +44,7 @@ class AddHoverboard extends Component {
           type="text"
           name="name"
           value={this.state.name}
+          
           onChange={this.handleChange}
         />
 
