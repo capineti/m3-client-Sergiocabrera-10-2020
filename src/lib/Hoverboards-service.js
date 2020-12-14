@@ -1,20 +1,18 @@
 import axios from "axios";
-import AddHoverboard from './../pages/AddHoverboard';
+//import AddHoverboard from '../components/AddHoverboard';
 
-// THIS IS AN EXAMPLE THAT YOU CAN USE
-// TO CREATE A SERVICE FOR YOUR AXIOS CALLS
 class HoverboardService {
   constructor() {
-    // this.api  is a reusable base of the request containing the base url (baseURL)
-    // of the API and the options ( `withCredentials: true` )
-    this.api = axios.create({
+    this.hoverboards = axios.create({
       baseURL: "http://localhost:5000/api",
       withCredentials: true,
     });
   }
 
-  getAll = (model, name, state, location) => {
-    const pr = this.api.get("/hoverboards") .then((response)=>response.data);
+  getAllHoverboards = () => {
+    const pr = this.hoverboards
+      .get("/hoverboards")
+      .then((response) => response.data);
 
     return pr;
   };
@@ -25,9 +23,9 @@ class HoverboardService {
     return pr;
   };
 
-  createHoverboard= (id) => {
-    const pr = this.api.post(`/hoverboards/${id}`);
-
+  createHoverboard = (data) => {
+    const pr = this.hoverboards.post("/hoverboards", data);
+    console.log("WORKS");
     return pr;
   };
 
@@ -39,9 +37,9 @@ class HoverboardService {
 }
 
 // Create instance (object) containing all axios calls as methods
-const hoverboardService = new HoverboardService();
+const hoverboardservice = new HoverboardService();
 
-export default hoverboardService;
+export default hoverboardservice;
 
 // Service is a set of methods abstracted and placed into a class, out of which we create one instance.
 // In the above case, all axios request calls are abstracted into methods.

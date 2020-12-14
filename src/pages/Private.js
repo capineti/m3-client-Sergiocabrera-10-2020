@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { withAuth } from "./../context/auth-context";
-import AddHoverboard from "./../pages/AddHoverboard"
+import AddHoverboard from "../components/AddHoverboard";
 import ReactPlayer from "react-player";
-
 
 class Private extends Component {
   render() {
@@ -15,11 +14,11 @@ class Private extends Component {
         */}
 
         <ReactPlayer url="https://www.youtube.com/watch?v=F_R1HUnH7EA&feature=emb_logo" />
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <AddHoverboard className="add"/>
+        <br />
+        <br />
+        <br />
+        <br />
+        <AddHoverboard />
       </div>
     );
   }
