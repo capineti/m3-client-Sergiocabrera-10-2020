@@ -1,33 +1,38 @@
 import React, { Component } from "react";
-import hoverboardservice from "./../lib/Hoverboards-service";
+//import hoverboardservice from "./../lib/Hoverboards-service";
 import { withAuth } from "../context/auth-context";
+import axios from "axios";
 //import hoverboardService from "../lib/Hoverboards-service";
-//import axios from "axios";
 
 class AddHoverboard extends Component {
-  state = { model: "", name: "" };
-
-  hadleFormSubmit = (event) => {
-    event.preventDefault();
-    const { model, name, state } = this.state;
-  };
-  handleHoverboards = () => {
-    console.log(this.state);
-    const { name } = this.state;
-    hoverboardservice.createHoverboard(name);
-    console.log("WORKS");
-  };
+  //state = { model: undefined, name: undefined };
+  state = { model: "The Marty", name: "" };
 
   handleChange = (event) => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   };
 
+  handleHoverboards = (even) => {
+    even.preventDefault();
+    const { name, model } = this.state;
+    axios.post(
+      "http://localhost:5000/api/hoverboards",
+      { name, model },
+      { withCredentials: true }
+    )
+    .then( (response) => {
+      console.log('after post', response.data);
+
+    } )
+  
+  };
+
   render() {
     const { model, name, state } = this.state;
 
     return (
-      <form onSubmit={this.hadleFormSubmit}>
+      <form onSubmit={this.handleFormSubmit}>
         <label>The Marty</label>
         <br />
 
@@ -37,23 +42,15 @@ class AddHoverboard extends Component {
         <input
           type="text"
           name="name"
-          value={name}
+          value={this.state.name}
           onChange={this.handleChange}
         />
 
-        <input
-          onClick={this.handleHoverboards}
-          type="submit"
-          value="AddHoverboard"
-        />
+        <button onClick={this.handleHoverboards} type="submit">
+          submit
+        </button>
       </form>
     );
   }
 }
 export default withAuth(AddHoverboard);
-
-/*<section class="payment-plan cf">
-        <h2>Select a payment plan:</h2>
-        <input type="radio" name="radio2" id="monthly" value="monthly" checked><label class="monthly-label four col" for="monthly">Monthly</label>
-        <input type="radio" name="radio2" id="yearly" value="yearly"><label class="yearly-label four col" for="yearly">Yearly</label>
-      </section>*/

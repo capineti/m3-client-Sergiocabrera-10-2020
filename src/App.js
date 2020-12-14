@@ -12,6 +12,7 @@ import LandingPage from "./pages/LandingPage";
 
 import AnonRoute from "./components/AnonRoute";
 import PrivateRoute from "./components/PrivateRoute";
+import ListOfBoards from "./components/ListOfBoards";
 
 class App extends Component {
   render() {
@@ -26,6 +27,7 @@ class App extends Component {
           <AnonRoute exact path="/login" component={Login} />
           <AnonRoute exact path="/landingPage" component={LandingPage} />
           <PrivateRoute exact path="/private" component={Private} />
+          <PrivateRoute exact path="/listofboards" component={ListOfBoards} />
         </Switch>
 
         <Navbar />
