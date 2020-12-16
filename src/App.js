@@ -4,15 +4,24 @@ import { Switch, Route } from "react-router-dom";
 
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import Signup from "./pages/Signup";
-import Login from "./pages/Login";
-import Private from "./pages/Private";
-import LandingPage from "./pages/LandingPage";
 
+// Smaller components used for react-router changing of what we see
 import AnonRoute from "./components/AnonRoute";
 import PrivateRoute from "./components/PrivateRoute";
-import ListOfBoards from "./components/ListOfBoards";
+
+// Big components - used as pages displayed by react-router
+import HomePage from "./pages/HomePage";
+import SignupPage from "./pages/SignupPage";
+import LoginPage from "./pages/LoginPage";
+import PrivatePage from "./pages/PrivatePage";
+import LandingPage from "./pages/LandingPage";
+import HoverboardsListPage from "./pages/HoverboardsListPage";
+import AddModelPage from "./pages/AddModelPage";
+import AddHoverboardPage from "./pages/AddHoverboardPage";
+import EditHoverboardsPage from "./pages/EditHoverboardsPage"
+import DetailPage from "./components/DetailPage";
+import SetLocationPage from './pages/SetLocationPage'
+
 
 class App extends Component {
   render() {
@@ -21,13 +30,19 @@ class App extends Component {
         <Header />
 
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/setlocation" component={SetLocationPage} />
 
-          <AnonRoute exact path="/signup" component={Signup} />
-          <AnonRoute exact path="/login" component={Login} />
+          <AnonRoute exact path="/signup" component={SignupPage} />
+          <AnonRoute exact path="/login" component={LoginPage} />
           <AnonRoute exact path="/landingPage" component={LandingPage} />
-          <PrivateRoute exact path="/private" component={Private} />
-          <PrivateRoute exact path="/listofboards" component={ListOfBoards} />
+
+          <PrivateRoute exact path="/listofboards" component={HoverboardsListPage} />
+          <PrivateRoute exact path="/private" component={PrivatePage} />
+          <PrivateRoute exact path="/addhoverboard/:model" component={AddHoverboardPage} />
+          <PrivateRoute exact path="/addmodel" component={AddModelPage} />
+          <PrivateRoute exact path="/edithoverboard/:id" component={EditHoverboardsPage} />
+          <PrivateRoute exact path="/detail/:id" component={DetailPage} />
         </Switch>
 
         <Navbar />

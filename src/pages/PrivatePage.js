@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withAuth } from "./../context/auth-context";
-import AddHoverboard from "../components/AddHoverboard";
+import AddHoverboard from "./AddHoverboardPage";
 import ReactPlayer from "react-player";
 
 class Private extends Component {

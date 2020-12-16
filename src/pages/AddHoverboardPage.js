@@ -1,17 +1,26 @@
 import React, { Component } from "react";
-//import hoverboardservice from "./../lib/Hoverboards-service";
 import { withAuth } from "../context/auth-context";
 import axios from "axios";
-//import hoverboardService from "../lib/Hoverboards-service";
+
 
 class AddHoverboard extends Component {
   //state = { model: undefined, name: undefined };
-  state = { model: "The Marty", name: "",battery:"100%",location:[242626,273673]};
+  state = { 
+    model: "", 
+    name: "",
+    battery:"100%",
+    location:[1.352,40.546]
+  };
 
   handleChange = (event) => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   };
+  componentDidMount(){
+    const model=this.props.match.params.model;
+    this.setState({model:model})
+ }
+
 
   handleHoverboards = (even) => {
     even.preventDefault();
@@ -24,21 +33,32 @@ class AddHoverboard extends Component {
    
     .then( (response) => {
       console.log('after post', response.data);
-      
+      this.props.history.push("/listofboards")
     } )
     this.setState({name:""})
   };
 
   render() {
-   
+ 
 
     return (
-      <form onSubmit={this.handleFormSubmit}>
-        <label>The Marty</label>
-        <br />
+      <div>
+      
+      
 
-        <label>No Tech</label>
-        <br />
+      <form onSubmit={this.handleChange}>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+       <h1>{this.state.model}</h1>
+      
 
         <input
           type="text"
@@ -52,6 +72,7 @@ class AddHoverboard extends Component {
           submit
         </button>
       </form>
+      </div>
     );
   }
 }

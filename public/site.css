@@ -1,0 +1,21 @@
+.mapContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.details-card {
+  background: #c52c7c;
+}
+
+.mapboxgl-popup-content {
+  padding: 0;
+  background: #c52c7c;
+}
+
+.mapboxgl-popup-content-wrapper {
+  padding: 0;
+  background: #c52c7c;
+}

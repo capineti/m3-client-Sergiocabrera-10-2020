@@ -4,7 +4,7 @@ import axios from "axios";
 
 import { Link } from "react-router-dom";
 
-class ListOfBoards extends Component {
+class HoverboardsListPage extends Component {
   state = {
     hoverboards: [],
     model: "",
@@ -23,22 +23,12 @@ class ListOfBoards extends Component {
 
     return (
       <div className="ListOfBoards">
-        {filteredHoverboards.map((hoverboardsObj) => {
-          console.log("hoverboardsObj", hoverboardsObj);
-          return (
-            <div key={hoverboardsObj._id}>
-              
-              <p>{hoverboardsObj.state}</p>
-              <p>{hoverboardsObj.battery}</p>
-              
-
-              <Link to={`/hoverboards/details/${hoverboardsObj._id}`}>
-                <p>{hoverboardsObj.name}</p>
-              </Link>
-            </div>
-          );
-        })}
-
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <button onClick={() => this.setHoverboardModel("The Marty")}>
           The Marty
         </button>
@@ -46,6 +36,20 @@ class ListOfBoards extends Component {
           No Tech
         </button>
         <button onClick={() => this.setHoverboardModel("")}>All</button>
+
+        {filteredHoverboards.map((hoverboardsObj) => {
+          console.log("hoverboardsObj", hoverboardsObj);
+          return (
+            <div key={hoverboardsObj._id}>
+              <p>{hoverboardsObj.state}</p>
+              <p>{hoverboardsObj.battery}</p>
+
+              <Link to={`edithoverboard/${hoverboardsObj._id}`}>
+                <p>{hoverboardsObj.name}</p>
+              </Link>
+            </div>
+          );
+        })}
       </div>
     );
   }
@@ -57,4 +61,4 @@ class ListOfBoards extends Component {
       });
   }
 }
-export default withAuth(ListOfBoards);
+export default withAuth(HoverboardsListPage);

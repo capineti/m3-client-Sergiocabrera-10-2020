@@ -14,17 +14,27 @@ nav.navbar {
   position: absolute;
   bottom: 0%;
   width: 100%;
+ 
   background: #ec3cc6;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+	align-items: center;
+	align-content: center;
 }
 
 button.navbar-button {
   margin: 15px 30px;
   border-radius: 3px;
+  
 }
 
 #home-btn {
+  position:absolute;
+  
   color: white;
   text-decoration: none;
+
 }
 
 .Header {
