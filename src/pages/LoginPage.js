@@ -1,17 +1,17 @@
 import React, { Component } from "react";
-import { withAuth } from '../context/auth-context';
+import { withAuth } from "../context/auth-context";
 
 class Login extends Component {
   state = { username: "", password: "" };
 
-  handleFormSubmit = event => {
+  handleFormSubmit = (event) => {
     event.preventDefault();
     const { username, password } = this.state;
     // Call funciton coming from AuthProvider ( via withAuth )
     this.props.login(username, password);
   };
 
-  handleChange = event => {
+  handleChange = (event) => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   };
@@ -20,18 +20,31 @@ class Login extends Component {
     const { username, password } = this.state;
 
     return (
-      <div>
+      <div className="login">
         <h1>Login</h1>
 
         <form onSubmit={this.handleFormSubmit}>
-          
           <label>Username:</label>
-          <input type="text" name="username" value={username} onChange={this.handleChange}/>
+          <br />
+          <input
+            type="text"
+            name="username"
+            value={username}
+            onChange={this.handleChange}
+          />
+          <br />
 
           <label>Password:</label>
-          <input type="password" name="password" value={password} onChange={this.handleChange} />
-
-          <input type="submit" value="Login" />
+          <br />
+          <input
+            type="password"
+            name="password"
+            value={password}
+            onChange={this.handleChange}
+          />
+          <br />
+          <br />
+          <input className="log" type="submit" value="Login" />
         </form>
       </div>
     );

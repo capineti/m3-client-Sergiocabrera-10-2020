@@ -1,46 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Oleo+Script:wght@700&display=swap");
+
 html,
 body {
   margin: 0;
   padding: 0;
+  color: white;
+  background-color: #d301a6;
+  font-family: "Oleo Script", cursive;
 }
 
 .App {
   padding: 20px;
 }
 
-nav.navbar {
+.navbar {
   display: flex;
   min-height: 5vh;
   position: absolute;
   bottom: 0%;
   width: 100%;
- 
-  background: #ec3cc6;
-	flex-direction: row;
-	flex-wrap: wrap;
+  justify-content: space-around;
+  background: #d301a6;
+  flex-direction: row;
+  flex-wrap: wrap;
 
-	align-items: center;
-	align-content: center;
+  align-items: center;
+  align-content: center;
+}
+.hoverboard1 {
+  width: 40%;
+  height: auto;
+  position: absolute;
+  top: 65%;
+  left: 30%;
+  transform: translateY(-50%);
+}
+.hoverboard2 {
+  width: 40%;
+  height: auto;
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  transform: translateY(-50%);
 }
 
+/* .mapContainer {
+  width: 100%;
+  height: 500px;
+} */
+.img {
+  width: 500px;
+  height: auto;
+  position: absolute;
+  top: 35%;
+  left: 37%;
+  transform: translateY(-50%);
+}
+.login {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+
+  position: absolute;
+  top: 45%;
+  left: 39%;
+  transform: translateY(-50%);
+  border: 1px white solid;
+  border-radius: 10px;
+  padding: 55px 65px 80px 55px;
+}
+.signup {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+
+  position: absolute;
+  top: 48%;
+  left: 39%;
+  transform: translateY(-50%);
+  border: 1px white solid;
+  border-radius: 10px;
+  padding: 15px 65px 45px 55px;
+}
+.form {
+  position: absolute;
+  top: 45%;
+  left: 45%;
+}
+.loginLink {
+  color: grey;
+}
+.logo {
+  position: absolute;
+  top: 45%;
+  left: 35%;
+  transform: translateY(-50%);
+  border: 1px white solid;
+  border-radius: 10px;
+  padding: 55px 65px 160px 55px;
+
+  width: 250px;
+  height: auto;
+}
+#message {
+  position: absolute;
+  top: 60%;
+  left: 43.5%;
+  transform: translateY(-50%);
+}
 button.navbar-button {
   margin: 15px 30px;
   border-radius: 3px;
-  
+  color: pink;
 }
-
-#home-btn {
-  position:absolute;
-  
-  color: white;
+a {
   text-decoration: none;
-
+  color: white;
+}
+.log {
+  border: 1px white solid;
+  padding: 5px 40px;
+  border-radius: 10px;
+  margin: 50px 20px;
 }
 
 .Header {
-  background: #ec3cc6;
+  background: #d301a6;
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: center;
+}
+
+#landingPagecontainer {
+  background: #d301a6;
+  color: white;
+}
+.logo2 {
   position: absolute;
-  top: 0%;
-  width: 100%;
+  left: 36%;
+  width: 350px;
+  height: auto;
+}
+
+.overboardlistcont {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  height: 50vh;
+  align-items: center;
+  align-content: center;
+}
+.hover {
+  width: 40vw;
+  text-align: left;
 }

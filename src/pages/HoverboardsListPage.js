@@ -22,25 +22,27 @@ class HoverboardsListPage extends Component {
     });
 
     return (
-      <div className="ListOfBoards">
+      <div className="overboardlistcont">
         <br />
         <br />
         <br />
         <br />
         <br />
         <br />
-        <button onClick={() => this.setHoverboardModel("The Marty")}>
-          The Marty
-        </button>
-        <button onClick={() => this.setHoverboardModel("No Tech")}>
-          No Tech
-        </button>
-        <button onClick={() => this.setHoverboardModel("")}>All</button>
+        <div>
+          <button onClick={() => this.setHoverboardModel("The Marty")}>
+            The Marty
+          </button>
+          <button onClick={() => this.setHoverboardModel("No Tech")}>
+            No Tech
+          </button>
+          <button onClick={() => this.setHoverboardModel("")}>All</button>
+        </div>
 
         {filteredHoverboards.map((hoverboardsObj) => {
           console.log("hoverboardsObj", hoverboardsObj);
           return (
-            <div key={hoverboardsObj._id}>
+            <div className="hover" key={hoverboardsObj._id}>
               <p>{hoverboardsObj.state}</p>
               <p>{hoverboardsObj.battery}</p>
 

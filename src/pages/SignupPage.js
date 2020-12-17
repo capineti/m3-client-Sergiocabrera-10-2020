@@ -1,18 +1,18 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { withAuth } from './../context/auth-context';
+import { withAuth } from "./../context/auth-context";
 
 class Signup extends Component {
-  state = { username: "", password: "" , email: "" };
+  state = { username: "", password: "", email: "" };
 
-  handleFormSubmit = event => {
+  handleFormSubmit = (event) => {
     event.preventDefault();
     const { username, password, email } = this.state;
-    
-    this.props.signup( username, password, email );
+
+    this.props.signup(username, password, email);
   };
 
-  handleChange = event => {
+  handleChange = (event) => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   };
@@ -20,35 +20,51 @@ class Signup extends Component {
   render() {
     const { username, password, email } = this.state;
     return (
-      <div>
+      <div className="signup">
         <h1>Sign Up</h1>
-
+        <br />
         <form onSubmit={this.handleFormSubmit}>
-
           <label>Username:</label>
-          <input type="text" name="username" value={username} onChange={this.handleChange} />
-
+          <br />
+          <input
+            type="text"
+            name="username"
+            value={username}
+            onChange={this.handleChange}
+          />
+          <br />
           <label>Email</label>
-          <input type="email" name="email" value={email} onChange={this.handleChange}/>
-
+          <br />
+          <input
+            type="email"
+            name="email"
+            value={email}
+            onChange={this.handleChange}
+          />
+          <br />
           <label>Password:</label>
-          <input type="password" name="password" value={password} onChange={this.handleChange} />
-
-
-          <input type="submit" value="Signup" />
+          <br />
+          <input
+            type="password"
+            name="password"
+            value={password}
+            onChange={this.handleChange}
+          />
+          <br />
+          <input className="log" type="submit" value="Signup" />
         </form>
-        
+
         <p>Already have account?</p>
-        <Link to={"/login"}> Login</Link>
+        <Link className="loginLink" to={"/login"}>
+          {" "}
+          Login
+        </Link>
       </div>
     );
   }
 }
 
-
-
 export default withAuth(Signup);
-
 
 // const EnhancedSignup = withAuth(Signup)
 // export default EnhancedSignup;

@@ -7,15 +7,16 @@
 }
 
 .details-card {
-  background: #c52c7c;
+  background: white;
 }
 
 .mapboxgl-popup-content {
   padding: 0;
-  background: #c52c7c;
+  background: white;
+  color: #d301a6;
 }
 
 .mapboxgl-popup-content-wrapper {
   padding: 0;
-  background: #c52c7c;
+  background: white;
 }

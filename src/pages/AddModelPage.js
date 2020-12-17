@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { withAuth } from "../context/auth-context";
-import img from "./../img/img.png";
-import img2 from "./../img/notech .jpg";
+import img from "./../img/marty.png";
+import img2 from "./../img/notech.png";
 import { Link } from "react-router-dom";
-import AddHoverboard from "./AddHoverboardPage";
+//import AddHoverboard from "./AddHoverboardPage";
 
 class AddModel extends Component {
   render() {
@@ -17,7 +17,7 @@ class AddModel extends Component {
         <br />
 
         <Link to={"addhoverboard/The Marty"}>
-          <img src={img} />
+          <img className="hoverboard1" src={img} />
         </Link>
 
         {/* <AddHoverboard hoverboard="The Marty" /> */}
@@ -26,7 +26,7 @@ class AddModel extends Component {
         <br />
         <br />
         <Link to={"addhoverboard/No Tech"}>
-          <img src={img2} />
+          <img className="hoverboard2" src={img2} />
         </Link>
       </div>
     );

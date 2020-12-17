@@ -1,34 +1,37 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { withAuth } from './../context/auth-context';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import { withAuth } from "./../context/auth-context";
 
 class Navbar extends Component {
   render() {
     // const { user, logout, isLoggedin } = this.props;
     return (
       <nav className="navbar">
-      <div>
-        <Link to={'/'} id='home-btn'>
-          <h4>Home</h4>
-        </Link>
         {this.props.isLoggedIn ? (
           <>
-            <p>Hello  {this.props.user && this.props.user.username}</p>
+            <p>Hello {this.props.user && this.props.user.username}</p>
+
+            <div className="b-navbar">
+              <Link to="/HomePage">Home</Link>
+            </div>
+
+            <div className="b-navbar">
+              <Link to="listofboards">list of boards</Link>
+            </div>
+
+            <div className="b-navbar">
+              <Link to="/AddModelPage">Add Model</Link>
+            </div>
             <button onClick={this.props.logout}>Logout</button>
           </>
         ) : (
           <>
-          <div>
-            <Link to="/login">
-              <button className="navbar-button">Login</button>{' '}
-            </Link>
+            <div className="log">
+              <Link to="/login">login</Link>
             </div>
-            <br />
-            <div>
-            <Link to="/signup">
-              <button className="navbar-button">Sign Up</button>{' '}
+            <Link className="log" to="/signup">
+              Sign up
             </Link>
-            </div>
           </>
         )}
       </nav>

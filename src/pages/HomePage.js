@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withAuth } from "../context/auth-context";
 import axios from "axios";
 
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import mapboxgl from "mapbox-gl";
 mapboxgl.accessToken =
   "pk.eyJ1IjoiY2FwaW5ldGkiLCJhIjoiY2tpcmMwbDR3MGFhbDJybjRuenZ0ZXFjbCJ9.n_feBGhT7Ws3TfEp-yAclA";
@@ -37,14 +37,16 @@ class HomePage extends Component {
         });
         marker
           .setLngLat(hoverboard.location)
-          .setPopup(new mapboxgl.Popup().setHTML(`
+          .setPopup(
+            new mapboxgl.Popup().setHTML(`
           <div class="details-card">
             <p>Name: ${hoverboard.name}</p>
             <p>State: ${hoverboard.state}</p>
             <p>Battery: ${hoverboard.battery}</p>
           </div>
-          `) )
-          
+          `)
+          )
+
           .addTo(this.map);
       });
     }

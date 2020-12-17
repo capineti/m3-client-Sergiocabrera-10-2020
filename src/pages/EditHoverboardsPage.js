@@ -35,13 +35,19 @@ class EditHoverboards extends Component {
   putHoverboards = (event) => {
     event.preventDefault();
 
-    axios.put(
-      `http://localhost:5000/api/hoverboards/${this.state.id}`,
-      { name: this.state.name, state: this.state.state, model: this.state.model },
-      { withCredentials: true }
-    ).then(  ()=>{ 
-      this.props.history.push("/listofboards");
-       }   )
+    axios
+      .put(
+        `http://localhost:5000/api/hoverboards/${this.state.id}`,
+        {
+          name: this.state.name,
+          state: this.state.state,
+          model: this.state.model,
+        },
+        { withCredentials: true }
+      )
+      .then(() => {
+        this.props.history.push("/listofboards");
+      });
   };
 
   deleteHoverboards = () => {

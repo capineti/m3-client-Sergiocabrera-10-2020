@@ -1,11 +1,15 @@
-import React from "react";
+import React, { Component } from "react";
+import logo from "./../img/logo.svg";
+class LandingPage extends Component {
+  render() {
+    return (
+      <div id="landingPagecontainer">
+        <img className="logo" src={logo} />
 
-function Home() {
-  return (
-    <div>
-      <h1>Landing Page</h1>
-    </div>
-  );
+        <h3 id="message">Admin account</h3>
+      </div>
+    );
+  }
 }
 
-export default Home;
+export default LandingPage;
