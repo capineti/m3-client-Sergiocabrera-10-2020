@@ -1,12 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Oleo+Script:wght@700&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Jura:wght@600&display=swap");
 html,
 body {
   margin: 0;
-  padding: 0;
-  color: white;
-  background-color: #d301a6;
-  font-family: "Oleo Script", cursive;
+  height: 100vh;
+  width: 100vw;
+  background-color: #ecf0f3;
+  font-family: "Jura", sans-serif;
+  color: #d301a6;
 }
 
 .App {
@@ -44,10 +44,6 @@ body {
   transform: translateY(-50%);
 }
 
-/* .mapContainer {
-  width: 100%;
-  height: 500px;
-} */
 .img {
   width: 500px;
   height: auto;
@@ -56,7 +52,7 @@ body {
   left: 37%;
   transform: translateY(-50%);
 }
-.login {
+.landing-div {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -66,13 +62,18 @@ body {
 
   position: absolute;
   top: 45%;
-  left: 39%;
+  left: 34%;
   transform: translateY(-50%);
-  border: 1px white solid;
-  border-radius: 10px;
-  padding: 55px 65px 80px 55px;
+
+  width: 430px;
+  height: 400px;
+  padding: 6px 35px 45px 35px;
+  border-radius: 40px;
+  background-color: #d301a6;
+  box-shadow: 13px 13px 20px#cbced1, -13px -13px 20px #fff;
 }
-.signup {
+
+.login-div {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -81,13 +82,61 @@ body {
   align-content: stretch;
 
   position: absolute;
-  top: 48%;
-  left: 39%;
+  top: 45%;
+  left: 34%;
   transform: translateY(-50%);
-  border: 1px white solid;
-  border-radius: 10px;
-  padding: 15px 65px 45px 55px;
+
+  width: 430px;
+  height: 400px;
+  padding: 6px 35px 45px 35px;
+  border-radius: 40px;
+  background-color: #ecf0f3;
+  box-shadow: 13px 13px 20px#cbced1, -13px -13px 20px #fff;
 }
+.signp-div {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+
+  position: absolute;
+  top: 51%;
+  left: 34%;
+  transform: translateY(-50%);
+
+  width: 430px;
+  height: 460px;
+  padding: 6px 35px 45px 35px;
+  border-radius: 40px;
+  background-color: #ecf0f3;
+  box-shadow: 13px 13px 20px#cbced1, -11px -11px 20px #fff;
+}
+* {
+  box-sizing: border-box;
+}
+
+.fields {
+  margin-top: 1px;
+}
+.fields input {
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 18px;
+  color: rgb(122, 121, 121);
+  padding: 20px 50px 20px 30px;
+}
+.username,
+.password,
+.email {
+  margin-bottom: 10px;
+  border-radius: 25px;
+  width: 100%;
+  box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
+}
+
 .form {
   position: absolute;
   top: 45%;
@@ -98,15 +147,15 @@ body {
 }
 .logo {
   position: absolute;
-  top: 45%;
-  left: 35%;
+  top: 200px;
+  left: 9%;
   transform: translateY(-50%);
   border: 1px white solid;
   border-radius: 10px;
-  padding: 55px 65px 160px 55px;
+  padding: 80px 70px 160px 70px;
 
-  width: 250px;
-  height: auto;
+  width: 350px;
+  height: 350px;
 }
 #message {
   position: absolute;
@@ -127,7 +176,28 @@ a {
   border: 1px white solid;
   padding: 5px 40px;
   border-radius: 10px;
-  margin: 50px 20px;
+  margin: 15px 20px;
+}
+.login-button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  height: 60px;
+  border-radius: 30px;
+  font-size: 20px;
+  color: grey;
+  text-align: center;
+
+  box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #fff;
+}
+.login-button:hover {
+  background-color: #d301a6;
+  color: white;
+}
+.login-button:active {
+  background-color: white;
+  color: #d301a6;
 }
 
 .Header {
